@@ -42,7 +42,20 @@ const show = (req, res) => {
     // Destroy
     const destroy = (req, res) => {
         const curId = req.params.id;
-        res.json('eliminiamo un elemento' + gameId);
+        // trovo index corrente
+        const curIndex = bachecaList.findIndex((curFood) => curFood.id === curId);
+        if (curIndex === -1) {
+            res.statusCode = 404;
+            res.json({
+                error: true,
+                message: "Piatto non trovato"
+                
+            })
+         }else {
+            bachecaList.splice(curIndex, 1);
+            res.json('eliminiamo un elemento' + curId);
+         }
+        
     }
 
     module.exports = {
