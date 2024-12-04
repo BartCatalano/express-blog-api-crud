@@ -1,21 +1,21 @@
 const express = require("express");
 const router = express.Router();
 // importo dati da lista dati
-const bachecaController = require("../controllers/controllerBacheca");
+const controllerBacheca = require("../controllers/controllerBacheca");
 
 // index
-router.get(`/`, bachecaController.index);
+router.get(`/`, controllerBacheca.index);
 
 // show
-router.get("/:id", bachecaController.show);
+router.get("/:id", controllerBacheca.show);
 // create
-router.post("/", bachecaController.create);
+router.post("/", controllerBacheca.create);
 // update
-router.put("/:id",bachecaController.update);
+router.put("/:id", controllerBacheca.update);
 
 // modify 
-router.patch("/:id",bachecaController.modify);
+router.patch("/:id", controllerBacheca.modify);
 // delete
-router.delete("/:id",bachecaController.destroy);
+router.delete("/:id", controllerBacheca.destroy);
 
 module.exports = router;

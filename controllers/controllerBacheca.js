@@ -18,7 +18,7 @@ const show = (req, res) => {
         if (curElem.id === parseInt(req.params.id)) {
             food = curElem;
         } else {
-        res.json(game);
+        res.json(curElem);
     }
     }};
 
@@ -65,4 +65,4 @@ const show = (req, res) => {
         update,
         modify,
         destroy
-    };
+    }
