@@ -44,3 +44,12 @@ const show = (req, res) => {
         const curId = req.params.id;
         res.json('eliminiamo un elemento' + gameId);
     }
+
+    module.exports = {
+        index,
+        show,
+        create,
+        update,
+        modify,
+        destroy
+    };
