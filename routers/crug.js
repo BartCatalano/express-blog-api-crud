@@ -1,38 +1,21 @@
 const express = require("express");
 const router = express.Router();
 // importo dati da lista dati
-const bacheca = require("../data/data");
+const bachecaController = require("../controllers/controllerBacheca");
 
 // index
-router.get("/", (req, res)=>{
-    res.json(bacheca);
-});
+router.get(`/`, bachecaController.index);
 
 // show
-router.get("/:id", (req,res)=>{
-    const curId = req.params.id;
-    res.json("vedo id specifico" + curId);
-
-});
+router.get("/:id", bachecaController.show);
 // create
-router.post("/", (req,res)=>{
-    res.json("creo");
-})
-// modify
-router.put("/:id",(req,res)=>{
-    const curId = req.params.id;
-    res.json("qui modifico tutto l'elemento dell' id" + curId);
-})
+router.post("/", bachecaController.create);
+// update
+router.put("/:id",bachecaController.update);
 
-// modify dettail
-router.patch("/:id",(req, res)=> {
-    const curId = req.params.id;
-    res.json("qui modifico solo un parte dell'elemento" + curId);
-})
+// modify 
+router.patch("/:id",bachecaController.modify);
 // delete
-router.delete("/:id",(req,res) => {
-const curId = req.params.id;
-req.json("qui elimino elemenco con id" + curId);
-});
+router.delete("/:id",bachecaController.destroy);
 
 module.exports = router;
