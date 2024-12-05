@@ -3,9 +3,9 @@ const app = express();
 const port = 3000;
 
 // richiamo le route
-const postsRouters = require("./routers/crug");
+const postsRouters = require("./routers/posts");
 
-app.use("/crug", postsRouters);
+app.use("/posts", postsRouters);
 
 // creo route di base
 app.get("/", (req, res)=>{

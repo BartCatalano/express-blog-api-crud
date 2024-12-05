@@ -41,7 +41,7 @@ const show = (req, res) => {
 
     // Destroy
     const destroy = (req, res) => {
-        const curId = req.params.id;
+        const curId = parseInt(req.params.id);
         // trovo index corrente
         const curIndex = bachecaList.findIndex((curFood) => curFood.id === curId);
         if (curIndex === -1) {
