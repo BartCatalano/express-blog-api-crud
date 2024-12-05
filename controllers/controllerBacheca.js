@@ -23,9 +23,25 @@ const show = (req, res) => {
     }};
 
     // create
-    const create = (req, res) => {
-        res.json('creiamo un nuovo elemento');
-    };
+    
+        const create = (req, res) => {
+            console.log(req.body);
+            // cerco l'ultimo item dell array
+            const lastItemIndex = bachecaList.length -1; 
+            const lastItem = bachecaList[lastItemIndex];
+            // vado a prendere id dell'ultimo item
+            const lastItemId = lastItem.id;
+            // creo il nuovo id 
+            const newItemId = lastItemId + 1;
+            // creo new food con i dati ricevuti dal client
+            const newFood = (req.body);
+            // gli assegno l'id preso prima
+            newFood.id = newItemId;
+            // pusho nell' array
+            bachecaList.push(newFood);
+            res.statusCode = (201);
+            res.json(newFood);
+        };
 
     // update
     const update = (req, res) => {
