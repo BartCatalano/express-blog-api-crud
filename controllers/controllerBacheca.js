@@ -45,9 +45,24 @@ const show = (req, res) => {
 
     // update
     const update = (req, res) => {
-        const curId = req.params.id;
-        res.json('modifichiamo i dati di uno specifico elemento' + curId);
-    }
+        // recupero id del post da modificare
+        const postId = parseInt(req.params.id);
+        // prendo l'object
+        const updateFood = req.body;
+        // assegno id del piatto da modificare
+        updateFood.id = postId;
+
+//   uso metodo find per cercare indice da modificare
+   const postToUpdate = bachecaList.findIndex((curPost) => curPost.id === postId); {
+    if (postToUpdate === -1) {
+        res.status(404);
+        res.json({error:"not found"
+        })
+    } else{  
+        // sostituisco elemento 
+        bachecaList [postToUpdate] = updateFood;
+        res.json(updateFood);
+    }}};
 
     // modify
     const modify = (req, res) => {
