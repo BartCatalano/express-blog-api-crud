@@ -4,6 +4,8 @@ const port = 3000;
 app.use(express.json());
 // richiamo le route
 const postsRouters = require("./routers/posts");
+// inserisco handles error 
+const handleError = require("./middleware/handleError");
 
 app.use("/posts", postsRouters);
 
@@ -13,6 +15,8 @@ app.get("/", (req, res)=>{
     
 });
 
+// Dopo tutte le rotte inseriamo il moddleware che gestisce errore
+app.use(handleError);
 
 // creo route di listening
 app.listen(port, ()=>{
