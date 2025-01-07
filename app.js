@@ -7,6 +7,8 @@ app.use(express.json());
 const postsRouters = require("./routers/posts");
 // inserisco handles error 
 const handleError = require("./middleware/handleError");
+// creo assets aperto per le immagini
+app.use(express.static("public"));
 
 app.use(
     cors({

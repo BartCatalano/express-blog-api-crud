@@ -26,7 +26,7 @@ const bacheca = [
         {id: 5,
          titolo : "Torta",
          contenuto : "contenuto",
-         immagine : "images/torata_paesana.jpeg",
+         immagine : "images/torta_paesana.jpeg",
          tags : "tags",
         },
  ];
