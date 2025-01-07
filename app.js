@@ -1,11 +1,17 @@
 const express = require("express");
 const app = express();
+const cors =  require("cors"); 
 const port = 3000;
 app.use(express.json());
 // richiamo le route
 const postsRouters = require("./routers/posts");
 // inserisco handles error 
 const handleError = require("./middleware/handleError");
+
+app.use(
+    cors({
+    origin: "http://localhost:5173"
+}));
 
 app.use("/posts", postsRouters);
 
