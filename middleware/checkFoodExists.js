@@ -1,4 +1,4 @@
-const bachecaList = require("../data");
+const bachecaList = require("../data/data.js");
 
 const checkFoodExist = (req, res, next) => {
 

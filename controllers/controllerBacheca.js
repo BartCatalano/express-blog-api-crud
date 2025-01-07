@@ -1,5 +1,5 @@
 // importo la lista dati
-const bachecaList = require("../data/data");
+const bachecaList = require("../data/data.js");
 
 
 // index
