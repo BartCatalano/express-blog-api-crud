@@ -13,14 +13,14 @@ const index = (req, res) => {
 // show
 const show = (req, res) => {
     let food = null;
+    
     for (let i = 0; i < bachecaList.length; i++) {
         const curElem = bachecaList[i];
         if (curElem.id === parseInt(req.params.id)) {
-            food = curElem;
-        } else {
-        res.json(curElem);
+            res.json(curElem);
+        }
     }
-    }};
+};
 
     // create
     
